@@ -2,7 +2,6 @@ import { Box, Container, Paper, Typography, Chip, Stack } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import ImgModal from "./ImgModal";

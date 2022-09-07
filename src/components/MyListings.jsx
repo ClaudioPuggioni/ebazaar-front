@@ -11,6 +11,7 @@ export default function MyListings() {
 
   useEffect(() => {
     dispatch(getMyListings(userInfo.id));
+    // eslint-disable-next-line
   }, []);
 
   return (

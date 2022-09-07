@@ -30,10 +30,10 @@ axiosClient.interceptors.response.use(
     const originalConfig = err.config;
     const errCode = err.response.status;
     console.log(originalConfig);
-    if (errCode == 401 && originalConfig.url === "auth/token") {
+    if ((errCode === 401 && originalConfig.url === "auth/token") || (errCode === "401" && originalConfig.url === "auth/token")) {
       return Promise.reject(err);
     }
-    if (errCode == 401) {
+    if (errCode === 401 || errCode === "401") {
       const tokenResponse = await axiosClient.post("auth/token", {
         token: localStorage.getItem("refresh_token"),
       });

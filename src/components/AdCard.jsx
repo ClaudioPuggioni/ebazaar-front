@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 let timeout;
-export default function AdCard({ props, removeable, handleDelete }) {
+export default function AdCard({ props, removeable }) {
   const { userInfo } = useSelector((state) => state.wall);
   const [wished, setWished] = useState(props.interested_buyers.includes(userInfo.id) ? 2 : 0);
   const dispatch = useDispatch();
@@ -104,7 +104,7 @@ export default function AdCard({ props, removeable, handleDelete }) {
                 onMouseEnter={() => (wished !== 2 ? setWished(1) : null)}
                 onMouseLeave={() => (wished !== 2 ? setWished(0) : null)}
                 onClick={() => {
-                  if (seller != userInfo.id) {
+                  if (seller !== userInfo.id) {
                     console.log("SellerID:", seller);
                     console.log("UserID:", userInfo.id);
                     wished !== 2 ? setWished(2) : setWished(1);

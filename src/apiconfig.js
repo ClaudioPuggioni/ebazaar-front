@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const BASE_URL = "https://ebazaar-back.herokuapp.com"; // http://localhost:8000/
+
 const axiosClient = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: BASE_URL,
   //   headers: {
   //     "content-type": "application/json",
   //   },
@@ -44,5 +46,7 @@ axiosClient.interceptors.response.use(
     return Promise.reject(err);
   }
 );
+
+export { BASE_URL };
 
 export default axiosClient;

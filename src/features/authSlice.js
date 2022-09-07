@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../apiconfig";
 
 const signupApi = createAsyncThunk("authSlice/signupApi", async (values, { rejectWithValue }) => {
-  const URL = "http://localhost:8000/auth/signup";
+  const URL = `${BASE_URL}/auth/signup`;
   // const response = await fetch(URL, {
   //   method: "POST",
   //   headers: {
@@ -20,7 +21,7 @@ const signupApi = createAsyncThunk("authSlice/signupApi", async (values, { rejec
 });
 
 const loginApi = createAsyncThunk("authSlice/loginApi", async (values, { rejectWithValue }) => {
-  const URL = "http://localhost:8000/auth/login";
+  const URL = `${BASE_URL}/auth/login`;
   // const response = await fetch(URL, {
   //   method: "POST",
   //   headers: {

@@ -1,0 +1,10 @@
+import { configureStore } from "@reduxjs/toolkit";
+import authSlice from "./features/authSlice";
+import dataSlice from "./features/dataSlice";
+
+export const store = configureStore({
+  reducer: {
+    wall: authSlice,
+    cabinet: dataSlice,
+  },
+});

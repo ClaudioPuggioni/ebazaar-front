@@ -134,7 +134,7 @@ const dataSlice = createSlice({
             ? `https://ebazaar-back.herokuapp.com/${imageUrl}`
             : imageUrl
             ? ele.imageUrl.map((ele) => `https://ebazaar-back.herokuapp.com/${ele}`)
-            : null,
+            : "",
       }));
       state.listings.forEach((ele) => {
         state.categories[ele.category._id].ads = !state.categories[ele.category._id].ads

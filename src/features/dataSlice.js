@@ -129,7 +129,12 @@ const dataSlice = createSlice({
         ...ele,
         price: priceConvert(ele.price),
         interested_buyers: ele.interested_buyers.map((ele) => ele._id),
-        imageUrl: `https://ebazaar-back.herokuapp.com/${imageUrl}`,
+        imageUrl:
+          typeof imageUrl === "string"
+            ? `https://ebazaar-back.herokuapp.com/${imageUrl}`
+            : imageUrl
+            ? ele.imageUrl.map((ele) => `https://ebazaar-back.herokuapp.com/${ele}`)
+            : null,
       }));
       state.listings.forEach((ele) => {
         state.categories[ele.category._id].ads = !state.categories[ele.category._id].ads

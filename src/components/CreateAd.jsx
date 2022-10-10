@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, CssBaseline, Grid, Paper, TextField } from "@mui/material";
+import { Button, CssBaseline, Grid, InputAdornment, Paper, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Box, Container } from "@mui/system";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -323,6 +323,15 @@ export default function CreateAd() {
                               console.log("PRICEVALUE", e.target.value);
                               setFieldValue("price", e.target.value);
                             }}
+                            startAdornment={
+                              <InputAdornment
+                                disablePointerEvents
+                                position="end"
+                                sx={{ position: "relative", right: "-17px", top: "1px", zIndex: 1 }}
+                              >
+                                $
+                              </InputAdornment>
+                            }
                           />
                           <ErrorMessage className="errorMsg" name="price" component="div" />
                         </Grid>

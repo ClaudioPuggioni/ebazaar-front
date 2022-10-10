@@ -188,6 +188,7 @@ export default function CreateAd() {
 
   const theme = createTheme();
   const [hide, setHide] = useState(true);
+  const [price, setPrice] = useState("");
 
   // const formik = useFormik({
   //   initialValues: {
@@ -315,15 +316,16 @@ export default function CreateAd() {
                             type="number"
                             id="price"
                             autoComplete="item-price"
-                            // value={formik.values.price}
+                            value={price}
                             // onChange={formik.handleChange}
                             // error={formik.touched.price && Boolean(formik.errors.price)}
                             // helperText={formik.touched.price && formik.errors.price}
                             onChange={(e) => {
                               console.log("PRICEVALUE", e.target.value);
-                              setFieldValue("price", e.target.value);
+                              e.target.value > 0 ? setPrice(e.target.value) : e.target.value < 0 ? setPrice(0) : setPrice("Free");
+                              let fieldPrice = e.target.value > 0 ? e.target.value : 0;
+                              setFieldValue("price", fieldPrice);
                             }}
-                            min="0"
                             startAdornment={
                               <InputAdornment
                                 disablePointerEvents

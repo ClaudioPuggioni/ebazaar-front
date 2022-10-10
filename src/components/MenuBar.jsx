@@ -138,7 +138,7 @@ export default function MenuBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting, idx) => (
-                <MenuItem key={setting} onClick={(handleCloseUserMenu, idx === 3 ? () => dispatch(menuActions[idx]()) : () => menuActions[idx]())}>
+                <MenuItem key={setting} onClick={(handleCloseUserMenu, idx === 0 ? () => dispatch(menuActions[idx]()) : () => menuActions[idx]())}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

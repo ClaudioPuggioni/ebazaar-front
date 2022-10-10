@@ -227,18 +227,23 @@ export default function CreateAd() {
           category: Yup.string().required("Required"),
           image: Yup.mixed(),
         })}
-        onSubmit={(values) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
+          setSubmitting(true);
           values.seller = userInfo.id;
           console.log(values);
           console.log("TYPE IS", values.image.type);
           console.log("SIZE IS", values.image.size);
           // alert(JSON.stringify(values, null, 2));
           // console.log("submission:", values);
+          resetForm();
           dispatch(addListingApi({ values, accessToken }));
-          setTimeout(() => goTo("/"), 3000);
+          setTimeout(() => {
+            goTo("/");
+            setSubmitting(false);
+          }, 3000);
         }}
       >
-        {({ setFieldValue }) => (
+        {({ setFieldValue, isSubmitting }) => (
           <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
               <Paper elevation={3}>
@@ -374,7 +379,7 @@ export default function CreateAd() {
                           </Button>
                         </Grid>
                       </Grid>
-                      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={loading}>
+                      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={loading || isSubmitting}>
                         Post Ad
                       </Button>
                     </Box>

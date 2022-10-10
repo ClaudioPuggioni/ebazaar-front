@@ -47,8 +47,8 @@ export default function Login() {
                 padding: 5,
               }}
             >
-              <img src={"assets/fencebay.svg"} alt="logo small" style={{ width: "100px" }} />
-              <Typography component="h1" variant="h5">
+              <img src={"assets/fencebay.svg"} alt="logo small" style={{ width: "100px", marginBottom: "10px" }} />
+              <Typography component="h1" variant="h6">
                 Log in
               </Typography>
               <Box component="form" onSubmit={formik.handleSubmit} sx={{ mt: 3 }}>

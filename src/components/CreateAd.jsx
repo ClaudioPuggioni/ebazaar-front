@@ -323,6 +323,7 @@ export default function CreateAd() {
                               console.log("PRICEVALUE", e.target.value);
                               setFieldValue("price", e.target.value);
                             }}
+                            min="0"
                             startAdornment={
                               <InputAdornment
                                 disablePointerEvents

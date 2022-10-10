@@ -127,7 +127,7 @@ export default function SignUp() {
                 <Grid container justifyContent="flex-end">
                   <Grid item>
                     <Link to={"/login"} variant="body2">
-                      Already an eBazaar member? Log in!
+                      Already a FenceBay member? Log in!
                     </Link>
                   </Grid>
                 </Grid>

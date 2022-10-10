@@ -53,7 +53,7 @@ export default function SignUp() {
                 padding: 5,
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>{/* <LockOutlinedIcon /> */}</Avatar>
+              <img src={"assets/fencebay.svg"} alt="logo small" style={{ width: "100px" }} />
               <Typography component="h1" variant="h5">
                 Sign up
               </Typography>

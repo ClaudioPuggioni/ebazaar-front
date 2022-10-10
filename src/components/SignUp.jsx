@@ -4,7 +4,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, CssBaseline, Grid, Paper, TextField } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { Box, Container } from "@mui/system";
 import { createTheme, ThemeProvider } from "@mui/material/styles";

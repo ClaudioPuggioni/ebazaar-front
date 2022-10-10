@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import ImgModal from "./ImgModal";
+import { BASE_URL } from "../apiconfig";
 
 export default function SingleAd() {
   const { adSingles, categories } = useSelector((state) => state.cabinet);
@@ -74,7 +75,7 @@ export default function SingleAd() {
                   }}
                 >
                   <AspectRatio sx={{ borderRadius: "sm", overflow: "auto" }}>
-                    <ImgModal src={`${adSingles[id].imageUrl}?h=120&fit=crop&auto=format`} />
+                    <ImgModal src={`${BASE_URL}${adSingles[id].imageUrl}?h=120&fit=crop&auto=format`} />
                   </AspectRatio>
                   <Box sx={{ whiteSpace: "nowrap" }}>
                     <Typography fontWeight="md">{item.title}</Typography>
@@ -84,7 +85,7 @@ export default function SingleAd() {
               ))
             ) : (
               <AspectRatio sx={{ borderRadius: "sm", overflow: "auto" }}>
-                <ImgModal src={`${adSingles[id].imageUrl}?h=120&fit=crop&auto=format`} />
+                <ImgModal src={`${BASE_URL}${adSingles[id].imageUrl}?h=120&fit=crop&auto=format`} />
               </AspectRatio>
             )}
           </Box>
